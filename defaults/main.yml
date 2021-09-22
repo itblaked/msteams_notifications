@@ -4,7 +4,7 @@
 # This role accepts the following standard input variables:
 # notification_subject: (Mapped to msteams_title)
 # notification_body: (Mapped to msteams_text)
-# notification_automation_result: (Use to switch the color of the card, which is green by default. If this variable contains succeeded then green will be used, if it contains failed then red will be used)
+# notification_automation_result: (Use to switch the color of the card, which is green by default. If this variable contains the value  `succeeded` then green will be used, if it contains `failed` then red will be used) 
 
 # This variable should contain the webhook url to a MS Teams channel. E.g. https://mycompany.webhook.office.com/GUID/IncomingWebhook/GUID
     msteams_webhook: 
@@ -22,7 +22,7 @@
       | --- | --- | ---|
       | aaa | bbb | ccc |
 # This variable is used for the colour access of the notification card.
-    msteams_color:  # Color accent of card in hex - E81123=Red  10E662=Green 
+    msteams_color:  # Color accent of card in hex - E81123=Red  10E662=Green By default this is empty to allow the value to be chosen based on the notification_automation_result variable value
 # This variable is used to embed actions on the notification card including the button to go to Ansible Automation Platform web page.
     msteams_actions:
           - "@type": OpenUri
