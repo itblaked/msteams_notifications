@@ -13,7 +13,7 @@
 # This variable is used for the title of the notification card.
     msteams_title: Automation Activity Notification
 # This variable is used for the text body of the notification card. A jinja2 template has been included for notification of Linux patches.
-    msteams_text: "{{ lookup('template', 'linux_patching_mail_body.jinja2') }}"
+    msteams_text:  "{{ lookup('template', 'linux_patching_mail_body.jinja2') }}"
     #     |
     #   An **automation activity** has generated this notification. The card colour can be used to indicate that the automation activity completed successfully (Green)  or not (Red).
       
