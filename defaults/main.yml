@@ -12,15 +12,16 @@
     msteams_aap_url: https://www.redhat.com/en/technologies/management/ansible
 # This variable is used for the title of the notification card.
     msteams_title: Automation Activity Notification
-# This variable is used for the text body of the notification card.
-    msteams_text: |
-      An **automation activity** has generated this notification. The card colour can be used to indicate that the automation activity completed successfully (Green)  or not (Red).
+# This variable is used for the text body of the notification card. A jinja2 template has been included for notification of Linux patches.
+    msteams_text: "{{ lookup('template', 'linux_patching_mail_body.jinja2') }}"
+    #     |
+    #   An **automation activity** has generated this notification. The card colour can be used to indicate that the automation activity completed successfully (Green)  or not (Red).
       
-      Many fields support markdown formatting such as a table: 
+    #   Many fields support markdown formatting such as a table: 
 
-      | Column 1 | Column 2 | Column 3 |
-      | --- | --- | ---|
-      | aaa | bbb | ccc |
+    #   | Column 1 | Column 2 | Column 3 |
+    #   | --- | --- | ---|
+    #   | aaa | bbb | ccc |
 # This variable is used for the colour access of the notification card.
     msteams_color:  # Color accent of card in hex - E81123=Red  10E662=Green By default this is empty to allow the value to be chosen based on the notification_automation_result variable value
 # This variable is used to embed actions on the notification card including the button to go to Ansible Automation Platform web page.
